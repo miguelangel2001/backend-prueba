@@ -1,5 +1,5 @@
 # ===============================
-# Etapa 1: Construcción
+# Etapa 1: Construir la aplicación
 # ===============================
 FROM maven:3.9.9-eclipse-temurin-23 AS builder
 WORKDIR /app
@@ -11,7 +11,7 @@ RUN mvn dependency:go-offline -B
 # Copiar el código fuente
 COPY src ./src
 
-# Empaquetar la aplicación (sin tests para acelerar build)
+# Compilar la app (sin tests para acelerar build)
 RUN mvn clean package -DskipTests
 
 # ===============================
