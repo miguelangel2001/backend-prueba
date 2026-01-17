@@ -2,20 +2,48 @@ package com.foodapp.exceptions;
 
 import java.time.LocalDateTime;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class ErrorDetails {
-	
-	private LocalDateTime localDateTime;
-	
-	private String message;
-	
-	private String details;
-	
-	
+
+    private LocalDateTime localDateTime;
+    private String message;
+    private String details;
+
+    // ====================
+    // Constructores
+    // ====================
+    public ErrorDetails() {
+    }
+
+    public ErrorDetails(LocalDateTime localDateTime, String message, String details) {
+        this.localDateTime = localDateTime;
+        this.message = message;
+        this.details = details;
+    }
+
+    // ====================
+    // Getters y Setters
+    // ====================
+    public LocalDateTime getLocalDateTime() {
+        return localDateTime;
+    }
+
+    public void setLocalDateTime(LocalDateTime localDateTime) {
+        this.localDateTime = localDateTime;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
 }
